@@ -1,0 +1,43 @@
+body{
+    background-color: #f5d9df;
+    font-family: nunito;
+}
+
+#main{
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+#main .navbar-brand{
+    color: #EA1C2C;
+}
+
+#main .nav-link{
+    color: white;
+}
+
+#main .nav-link:hover{
+    color: #EA1C2C;
+}
+
+#heading-group{
+    text-transform: uppercase;
+}
+
+#heading-group span{
+    color: #EA1C2C;
+}
+
+#heading-group h1{
+    font-weight: 100;
+    font-size: 4rem;
+}
+
+@media (max-width: 1200px){
+    #heading-group h1{
+        font-weight: 100;
+        font-size: 3rem;
+    }
+}
+
+

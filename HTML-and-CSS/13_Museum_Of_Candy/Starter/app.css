@@ -3,25 +3,44 @@ body{
     font-family: nunito;
 }
 
-#main{
+.blurb h2{
+    color: #EA1C2C;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+
+.blurb p{
+    color: #f498b8;
+    font-weight: 100;
+    font-size: 1.125rem;
+    line-height: 2;
+}
+
+.content{
+    margin-top: 100px;
+}
+
+#mainNav{
     font-size: 1.5rem;
     font-weight: 100;
 }
 
-#main .navbar-brand{
+.navbar.scrolled{
+    background: rgb(222, 192, 222);
+    transition: background 300ms;
+}
+
+#mainNav .navbar-brand{
     color: #EA1C2C;
 }
 
-#main .nav-link{
+#mainNav .nav-link{
     color: white;
 }
 
-#main .nav-link:hover{
+#mainNav .nav-link:hover{
     color: #EA1C2C;
-}
-
-#heading-group{
-    text-transform: uppercase;
 }
 
 #heading-group span{
@@ -31,6 +50,7 @@ body{
 #heading-group h1{
     font-weight: 100;
     font-size: 4rem;
+    text-transform: uppercase;
 }
 
 @media (max-width: 1200px){

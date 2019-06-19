@@ -23,7 +23,7 @@ resetButton.addEventListener("click", function(){
     p1Button.disabled = false;
 })
 
-scoreSelector.addEventListener("click", function(){
+scoreSelector.addEventListener("change", function(){
     maxScore = scoreSelector.value;
     showMax.textContent = maxScore;
 })

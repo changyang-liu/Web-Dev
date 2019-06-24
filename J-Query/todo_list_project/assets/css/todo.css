@@ -67,7 +67,7 @@ span{
     opacity: 0;
 }
 
-li:hover span{
+span:hover{
     opacity: 1.0;
     width:40px
 }

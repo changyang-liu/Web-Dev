@@ -20,3 +20,7 @@ $("input").keypress(function(k){
 $(".fa-plus").on("click", function(){
     $("#input").fadeToggle(150);
 })
+
+if($("#list li").length === 0){
+    $("#input").css("display", "inline-block")
+}

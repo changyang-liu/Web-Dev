@@ -1,31 +1,24 @@
 var express = require('express');
 var app = express();
+var bodyParser = require("body-parser");
+
+var friends = ["a", "b", "c", "d", "e"];
+
+app.set("view engine", "ejs");
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", function(req, res){
-    res.send("Hi there, welcome to my assignment");
+    res.render("home");
 })
 
-app.get("/speak/:animal", function(req, res){
-    var animal = req.params.animal;
-    if(animal === "pig"){
-        res.send("The pig says 'Oink'");
-    }else if(animal === "cow"){
-        res.send("The cow says 'Moo'");
-    }else if(animal === "dog"){
-        res.send("The dog says 'Woof'");
-    }
-    res.send("Sorry, page not found");
+app.post("/addFriend", function(req, res){
+    var newFriend = req.body.newfriend;
+    friends.push(newFriend);
+    res.redirect("/friends");
 })
 
-app.get("/repeat/:word/:times", function(req, res){
-    var times = parseInt(req.params.times, 10);
-    var phrase = "";
-    for(var i = 0; i < times; i++){
-        console.log(i)
-        phrase += req.params.word + " ";
-    }
-    console.log(phrase);
-    res.send(phrase);
+app.get("/friends", function(req, res){
+    res.render("friends", {friends: friends});
 })
 
 app.get("/*", function(req, res){
@@ -33,5 +26,5 @@ app.get("/*", function(req, res){
 })
 
 app.listen(3000, function(){
-    console.log("console started");
+    console.log("server started");
 });

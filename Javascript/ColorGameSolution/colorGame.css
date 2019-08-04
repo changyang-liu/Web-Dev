@@ -1,9 +1,35 @@
 body{
 	background-color: #232323;
+	margin: 0;
+	font-family: "Montserrat";
 }
 
 h1{
+	line-height: 1.1;
+	font-weight: 400;
 	color: white;
+	text-align: center;
+	background: steelblue;
+	margin: 0;
+	text-transform: uppercase;
+	padding: 20px 0;
+}
+
+button{
+	border: none;
+	background: none;
+	text-transform: uppercase;
+	height: 100%;
+	color: steelblue;
+	font-weight: 700;
+	letter-spacing: 1px;
+	font-size: inherit;
+	transition: all 0.3s;
+}
+
+button:hover{
+	color: white;
+	background: steelblue;
 }
 
 .square{
@@ -11,14 +37,19 @@ h1{
 	background-color: purple;
 	padding-bottom: 30%;
 	float: left;
-	margin: 1.66%
+	margin: 1.66%;
+	border-radius: 15%;
+	transition: background 0.4s;
 }
 
 .container{
-	margin: 0 auto;
+	margin: 20px auto;
 	max-width: 600px;
 }
 
+#colorDisplay{
+	font-size: 200%;
+}
 
 #stripe{
 	background-color: white;
@@ -26,6 +57,12 @@ h1{
 	text-align: center;
 }
 
+#message{
+	display: inline-block;
+	width: 20%;
+}
+
 .selected{
-	background-color: blue;
+	color: white;
+	background-color: steelblue;
 }

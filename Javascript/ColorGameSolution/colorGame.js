@@ -10,8 +10,10 @@ var easyBtn = document.querySelector("#easy");
 var hardBtn = document.querySelector("#hard");
 
 var numSquares = 6;
+var won = false;
 
 resetBtn.addEventListener("click", function(){
+	won = false
 	resetBtn.textContent = "New Colors";
 	colors = randomColors(numSquares);
 	pickedColor = pickColor(colors);
@@ -19,33 +21,40 @@ resetBtn.addEventListener("click", function(){
 	for(var i = 0; i < squares.length; i++){
 		squares[i].style.backgroundColor = colors[i];
 	}
-	h1.style.backgroundColor = "#232323";
+	document.querySelector("#message").textContent = "";
+	h1.style.backgroundColor = "steelblue";
 })
 
 easyBtn.addEventListener("click", function(){
-	numSquares = 3;
-	easyBtn.classList.add("selected");
-	hardBtn.classList.remove("selected");
-	colors = randomColors(numSquares);
-	pickedColor = pickColor(colors);
-	for(var i = 0; i < squares.length; i++){
-		if(i < 3){
-			squares[i].style.backgroundColor = colors[i];
-		}else{
-			squares[i].style.display = "none";
+	if(won === false){
+		numSquares = 3;
+		easyBtn.classList.add("selected");
+		hardBtn.classList.remove("selected");
+		colors = randomColors(numSquares);
+		pickedColor = pickColor(colors);
+		document.querySelector("#colorDisplay").textContent = pickedColor;
+		for(var i = 0; i < squares.length; i++){
+			if(i < 3){
+				squares[i].style.backgroundColor = colors[i];
+			}else{
+				squares[i].style.display = "none";
+			}
 		}
 	}
 })
 
 hardBtn.addEventListener("click", function(){
-	numSquares = 6;
-	hardBtn.classList.add("selected");
-	easyBtn.classList.remove("selected");
-	colors = randomColors(numSquares);
-	pickedColor = pickColor(colors);
-	for(var i = 0; i < squares.length; i++){
-		squares[i].style.backgroundColor = colors[i];
-		squares[i].style.display = "block";
+	if(won === false){
+		numSquares = 6;
+		hardBtn.classList.add("selected");
+		easyBtn.classList.remove("selected");
+		colors = randomColors(numSquares);
+		pickedColor = pickColor(colors);
+		document.querySelector("#colorDisplay").textContent = pickedColor;
+		for(var i = 0; i < squares.length; i++){
+			squares[i].style.backgroundColor = colors[i];
+			squares[i].style.display = "block";
+		}
 	}
 })
 
@@ -53,6 +62,7 @@ for(var i = 0; i < squares.length; i++){
 	squares[i].style.backgroundColor = colors[i];
 	squares[i].addEventListener("click", function(){
 		if(this.style.backgroundColor === pickedColor){
+			won = true;
 			message.textContent = "Correct!";
 			changeColors(pickedColor);
 			h1.style.backgroundColor = pickedColor;

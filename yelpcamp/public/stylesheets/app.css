@@ -1,4 +1,11 @@
-.card-img-top{
-    object-fit: none;
-    max-height: 350px;
+.img-thumbnail{
+    padding: 0;
+}
+
+.img-thumbnail .caption{
+    padding: 9px;
+}
+
+.img-thumbnail img{
+    width: 100%;
 }
